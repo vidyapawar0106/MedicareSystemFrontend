@@ -1,0 +1,62 @@
+<div>
+<input type="button" value="Add Admin" (click)="onClick()" style="background-color: green;font-weight: bold;">||
+<input type="button" value="Admin home" (click)="adminHome()" style="background-color: green;font-weight: bold;">
+</div>
+
+
+<div *ngIf="b1">
+    <h2>Admin list</h2>
+    <table>
+        <tr>
+            <th>Admin id ||</th>
+            <th>Admin Username||</th>
+            <th>Admin Password ||</th>
+            <th>Update Admin ||</th>
+            <th>Delete Admin</th>
+        </tr>
+        <tr *ngFor="let admin of adminInfo">
+            <td>{{admin.id}}</td>
+            <td>{{admin.username}}</td>
+            <td>{{admin.password}}</td>
+            <td><input type="button" value="Update" (click)="updateAdmin(admin.id)" style="background-color: green;"></td>
+            <td><input type="button" value="Delete" (click)="deleteAdmin(admin.id)" style="background-color: green;"></td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="b2">
+    <h2>Update Admin</h2>
+    <form [formGroup]=" formref" (ngSubmit)=" updateadmin1()">
+        <div class="form-group">
+            <label>Id</label>
+            <input type="text" class="form-control" formControlName="id">
+          </div>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" class="form-control" formControlName="username">
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="text" class="form-control" formControlName="password">
+        </div>
+        
+        <input type="submit" value="Update Admin">
+      </form>
+    
+   
+</div>
+<div *ngIf="b3">
+    <h2>Add Admin</h2>
+    <form [formGroup]="addAdminref" (ngSubmit)="addAdmin()">
+        <div>
+        <label>Username</label>
+          <input type="text" class="form-control" formControlName="username">
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="text" class="form-control" formControlName="password">
+        </div>
+        <input type="submit" value="Add Admin">
+
+    </form>
+
+</div>

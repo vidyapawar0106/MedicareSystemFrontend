@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div>
+    <h2>Welcome Admin</h2>
+    <input type="button" value="Manage User" style="color: blueviolet;" (click)="manageUser()">||
+    <input type="button" value="Manage Admin" style="color:blueviolet;" (click)="addAdmin()">||
+    <input type="button" value="Add Product" style="color:blueviolet" (click)="addProduct()">||
+    <input type="button" value="file Upload" style="color:blueviolet" (click)="bulk_upload()">
+    <input type="button" value="logout" style="color:red;" (click)="logout()">
+    <h1>Display List of Product</h1>
+    <table border="1">
+        <tr>
+            <th>product Id</th>
+            <th>Product Name</th>
+            <th>Product Company</th>
+            <th>Product Prize</th>
+            <th>Product Quantity</th>
+            <th>product Url</th>
+            <th>Update Operation</th>
+            <th>Delete Operation</th>
+        </tr>
+        
+            <tbody>
+            <tr *ngFor="let product of productInfo">
+                <td><span>{{product.pid}}</span></td>
+                <td>{{product.pname}}</td>
+                <td>{{product.cname}}</td>
+                <td>{{product.prize}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.url}}</td>
+                <td><input type="button" value="update" style="color: red;" (click)="updateProduct(product.pid)"></td>
+                <td><input type="button" value="delete" style="color: red;" (click)="deleteProduct(product.pid)"></td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>

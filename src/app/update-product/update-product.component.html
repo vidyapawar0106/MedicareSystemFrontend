@@ -1,0 +1,34 @@
+<!-- <header>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</header> -->
+<h2 style="margin-left: 2cm;">Update Product Details</h2>
+<div>
+    <form [formGroup]=" productref" (ngSubmit)="updateProduct()" style="margin-left: 2cm">
+        <div class="form-group">
+            <label>Product id</label>
+            <input type="text" class="form-control"   formControlName="pid">
+          </div>
+        <div class="form-group">
+          <label>Product name</label>
+          <input type="text" class="form-control"  formControlName="pname">
+        </div>
+        <div class="form-group">
+          <label>Company name</label>
+          <input type="text" class="form-control"  formControlName="cname">
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input type="number" class="form-control"  formControlName="prize">
+          </div>
+          <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" class="form-control"  formControlName="quantity">
+          </div>
+          <div class="form-group">
+            <label>Url</label>
+            <input type="text" class="form-control"  formControlName="url">
+          </div>
+        
+        <input type="submit" value="Update Product">
+      </form>
+</div>

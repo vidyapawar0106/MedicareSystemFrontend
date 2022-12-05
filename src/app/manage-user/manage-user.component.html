@@ -1,0 +1,48 @@
+
+<div *ngIf="b1">
+  <input type="button" value="Admin home" style="background-color: green;" (click)="admin()">
+    <h2>User list</h2>
+    <table border="1">
+        <tr>
+            <th>User Id ||</th>
+            <th>User Name ||</th>
+            <th>Email Id ||</th>
+            <th>Password ||</th>
+            <th>Update Operation ||</th>
+            <th>Delete Operation</th>
+        </tr>
+        <tbody>
+        <tr *ngFor="let user of userInfo">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td><input type="button" value="Update User" (click)="onClickUpdate(user.id)"></td>
+            <td><input type="button" value="Delete User" (click)="OnClickDelete(user.id)"></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<div *ngIf="b2">
+    <form [formGroup]="userref" (ngSubmit)="updateUser()">
+        <div class="form-group">
+            <label>User Id</label>
+            <input type="number" class="form-control" formControlName="id">
+          </div>
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" formControlName="username">
+          </div>
+        <div class="form-group">
+          <label>Email address:</label>
+          <input type="email" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" class="form-control" formControlName="password">
+        </div>
+        <input type="submit" value="Update User" >
+        </form>
+        </div>
+
+
